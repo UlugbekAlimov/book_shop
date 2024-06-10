@@ -34,14 +34,20 @@
       </div>
     </Modal>
   </header>
+  <div class="flex my-3 justify-around">
+    <CustomBtn>Default Button</CustomBtn>
+    <CustomBtn>Default Button</CustomBtn>
+    <CustomBtn>Default Button</CustomBtn>
+  </div>
 </template>
 
 <script>
 import Modal from '../components/Modal.vue';
-
+import CustomBtn from './CustomBtn.vue';
 export default {
   components: {
-    Modal
+    Modal,
+    CustomBtn
   },
   data() {
     return {

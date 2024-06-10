@@ -8,9 +8,15 @@
           <div class="flex items-center">
             <img :src="book.image" class="w-24 h-32 object-cover mr-4">
             <div>
-              <h3 class="text-lg font-semibold">{{ book.title }}</h3>
-              <p class="text-gray-600">{{ book.author }}</p>
-              <p class="text-gray-600">{{ book.price }}</p>
+              <h3 class="text-lg">Название: {{ book.name }}</h3>
+              <p >Описание: {{ book.description }}</p>
+              <p >Цена : {{ book.price }}</p>
+              <div v-if="book.authors && book.authors.length" class="flex-1">
+                <p class=" inline">Авторы: </p>
+                <ul class="inline">
+                  <li v-for="author in book.authors" :key="author" class="inline">{{ author }}, </li>
+                </ul>
+              </div>
             </div>
           </div>
           <div class="flex">
@@ -25,18 +31,37 @@
 </template>
 
 <script>
+import { db } from '../firebase.js'; 
+import { collection, getDocs } from 'firebase/firestore';
+
 export default {
-  props: {
-    books: {
-      type: Array,
-      required: true
-    }
+  data() {
+    return {
+      books: [], 
+      isLoading: true 
+    };
   },
   methods: {
-
+    async fetchBooks() {
+      try {
+        const querySnapshot = await getDocs(collection(db, 'books'));
+        this.books = querySnapshot.docs.map(doc => ({
+          id: doc.id,
+          ...doc.data()
+        }));
+      } catch (error) {
+        console.error('Ошибка при получении данных:', error);
+      } finally {
+        this.isLoading = false;
+      }
+    }
+  },
+  created() {
+    this.fetchBooks();
   }
 };
 </script>
+
 
 <style>
 
