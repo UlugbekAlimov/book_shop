@@ -33,10 +33,10 @@
               </option>
             </select>
           </div>
-          <div class="mb-4">
+          <!-- <div class="mb-4">
             <label class="block text-black text-sm font-bold mb-2" for="image">Изображение:</label>
             <input @change="handleImageUpload" class="rounded w-full py-2 px-3 text-black" type="file" placeholder="Изображение">
-          </div>
+          </div> -->
           <div class="flex items-center justify-between">
             <button class="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded focus:outline-none focus:shadow-outline" type="submit">
               Добавить
@@ -63,7 +63,7 @@ export default {
       name: '',
       authors: '',
       price: '',
-      image: null,
+      // image: '',
       description: '',
       category: '', 
       categories: [] 
@@ -73,10 +73,10 @@ export default {
     openModal() {
       this.$refs.modal.openModal();
     },
-    handleImageUpload(event) {
-      const image = event.target.files[0];
-      this.$emit('imageUploaded', image); 
-    },
+    // handleImageUpload(event) {
+    //   const image = event.target.files[0];
+    //   this.$emit('imageUploaded', image); 
+    // },
     async fetchCategories() {
       try {
         const querySnapshot = await getDocs(collection(db, 'categories'));
@@ -99,10 +99,10 @@ export default {
           category: this.category
         });
         
-        if (this.image) {
-          const imageRef = storageRef(storage, `images/${this.image.name}`);
-          await uploadBytes(imageRef, this.image);
-        }
+        // if (this.image) {
+        //   const imageRef = storageRef(storage, `images/${this.image.name}`);
+        //   await uploadBytes(imageRef, this.image);
+        // }
 
         console.log('Книга успешно добавлена');
         this.$refs.modal.closeModal();

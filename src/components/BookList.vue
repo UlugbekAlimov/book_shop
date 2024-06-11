@@ -13,9 +13,7 @@
         <div class="flex items-center justify-between">
           <div class="flex items-center">
             <div>
-              <img :src="book.image" class="w-24 h-32 object-cover mr-4" />{{
-                book.image
-              }}
+              <img  src="../assets/book.webp" class="w-24 h-32 object-cover mr-4" />
             </div>
             <div>
               <h3 class="text-lg">Название: {{ book.name }}</h3>
