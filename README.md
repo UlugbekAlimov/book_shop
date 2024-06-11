@@ -1,8 +1,28 @@
 # Vue 3 + Vite
 
-This template should help get you started developing with Vue 3 in Vite. The template uses Vue 3 `<script setup>` SFCs, check out the [script setup docs](https://v3.vuejs.org/api/sfc-script-setup.html#sfc-script-setup) to learn more.
+## Книжный магазин
 
-## Recommended IDE Setup
+### Проект "Книжный магазин" - это веб-приложение, разработанное для автоматизации процессов управления книжным магазином.
 
-- [VS Code](https://code.visualstudio.com/) + [Vue - Official](https://marketplace.visualstudio.com/items?itemName=Vue.volar) (previously Volar) and disable Vetur
-"# book_shop" 
+## Установка
+
+### 1. Установите Node.js, если он еще не установлен. Скачать и установить можно с [официального сайта Node.js](https://nodejs.org/).
+### 2. Клонируйте репозиторий на свой компьютер:
+
+### https://github.com/UlugbekAlimov/book_shop.git
+
+### `<cd название_проекта>`
+
+### `<npm install>`
+
+## Запуск
+
+### `<npm run dev>`
+
+# Использование
+
+### Приложение предоставляет пользователю возможность добавлять, просматривать, обновлять и удалять книги, а также категории . Каждая книга имеет свои свойства, включая название, авторов, цену, описание и изображение.
+
+# Контакты
+
+### Телефон `<+992988431860>` Email `<alimovu966@gamil.com>`
